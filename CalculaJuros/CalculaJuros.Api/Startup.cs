@@ -1,18 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
 using CalculaJuros.Api.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Hosting.Internal;
-using Microsoft.Extensions.Logging;
+using System;
+using System.Net.Http;
 
 namespace CalculaJuros.Api
 {
@@ -69,7 +62,7 @@ namespace CalculaJuros.Api
 
         protected virtual void ConfigureTaxaJurosService(IServiceCollection services)
         {
-            var endpoint = new Uri(Environment.GetEnvironmentVariable(""));
+            var endpoint = new Uri(Environment.GetEnvironmentVariable("TAXA_JUROS_API"));
 
             services.AddSingleton<ITaxaJurosService>(provider => new TaxaJurosService(endpoint, _httpClient));
         }

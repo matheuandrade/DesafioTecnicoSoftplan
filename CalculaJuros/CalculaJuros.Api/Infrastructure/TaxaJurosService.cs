@@ -1,7 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -26,9 +24,11 @@ namespace CalculaJuros.Api.Infrastructure
 
             var response = await _httpClient.GetAsync(uriToBecalled);
 
-            var jsonMessage = await response.Content.ReadAsStringAsync();
-
-            taxaJuros = JObject.Parse(jsonMessage).ToObject<double>();
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonResult = await response.Content.ReadAsStringAsync();
+                taxaJuros = JsonConvert.DeserializeObject<double>(jsonResult);
+            }
 
             return taxaJuros;
         }

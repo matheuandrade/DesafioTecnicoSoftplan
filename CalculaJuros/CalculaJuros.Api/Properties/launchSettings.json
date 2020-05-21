@@ -19,7 +19,7 @@
     },
     "CalculaJuros.Api": {
       "commandName": "Project",
-      "launchBrowser": true,
+      "launchBrowser": false,
       "launchUrl": "api/calculajuros",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
