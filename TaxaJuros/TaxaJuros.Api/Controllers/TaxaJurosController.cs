@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using TaxaJuros.Api.Infrastructure;
 
 namespace TaxaJuros.Api.Controllers
 {
@@ -11,36 +7,17 @@ namespace TaxaJuros.Api.Controllers
     [ApiController]
     public class TaxaJurosController : ControllerBase
     {
-        // GET: api/TaxaJuros
+        private readonly IJurosService _jurosService;
+
+        public TaxaJurosController(IJurosService jurosService)
+        {
+            _jurosService = jurosService;
+        }
+
         [HttpGet]
-        public IEnumerable<string> Get()
+        public ObjectResult Get()
         {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET: api/TaxaJuros/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST: api/TaxaJuros
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT: api/TaxaJuros/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return Ok(_jurosService.getJuros());
         }
     }
 }

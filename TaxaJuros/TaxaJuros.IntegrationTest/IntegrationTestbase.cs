@@ -3,10 +3,9 @@ using Xunit;
 
 namespace TaxaJuros.IntegrationTest
 {
-    public class UnitTest1
+    public class IntegrationTestbase
     {
-        [Fact]
-        public void Test1()
+        public IntegrationTestbase()
         {
 
         }

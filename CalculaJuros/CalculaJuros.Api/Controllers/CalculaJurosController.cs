@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using CalculaJuros.Api.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace CalculaJuros.Api.Controllers
 {
@@ -11,36 +8,16 @@ namespace CalculaJuros.Api.Controllers
     [ApiController]
     public class CalculaJurosController : ControllerBase
     {
-        // GET: api/CalculaJuros
+        private readonly ICalculaJurosService _calculaJurosService;
+        public CalculaJurosController(ICalculaJurosService calculaJurosService)
+        {
+            _calculaJurosService = calculaJurosService;
+        }
+
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<ObjectResult> Get([FromQuery] decimal valorInicial, [FromQuery] int tempo)
         {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET: api/CalculaJuros/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST: api/CalculaJuros
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT: api/CalculaJuros/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return Ok(await _calculaJurosService.calculaJuros(valorInicial, tempo));
         }
     }
 }

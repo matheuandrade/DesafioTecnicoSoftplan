@@ -1,11 +1,17 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using TaxaJuros.Api.Infrastructure;
+using Microsoft.Extensions.Logging;
 
-namespace TaxaJuros.Api
+namespace ShowMeTheCode.Api
 {
     public class Startup
     {
@@ -19,7 +25,6 @@ namespace TaxaJuros.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            ConfigureJurosService(services);
             services.AddControllers();
         }
 
@@ -41,11 +46,6 @@ namespace TaxaJuros.Api
             {
                 endpoints.MapControllers();
             });
-        }
-
-        protected virtual void ConfigureJurosService(IServiceCollection services)
-        {
-            services.AddSingleton<IJurosService, JurosService>();
         }
     }
 }

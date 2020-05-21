@@ -27,6 +27,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculaJuros.UnitTest", "Ca
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculaJuros.Api", "CalculaJuros\CalculaJuros.Api\CalculaJuros.Api.csproj", "{2432C357-D953-4D5C-AEEA-6554CBAC5664}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShowMeTheCode", "ShowMeTheCode", "{55B3E4F2-6E23-4DBB-84E3-0630E32FFDBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowMeTheCode.Api", "ShowMeTheCode\ShowMeTheCode.Api\ShowMeTheCode.Api.csproj", "{43465B1B-22FE-4154-8354-1ED57C82BE2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +69,10 @@ Global
 		{2432C357-D953-4D5C-AEEA-6554CBAC5664}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2432C357-D953-4D5C-AEEA-6554CBAC5664}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2432C357-D953-4D5C-AEEA-6554CBAC5664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43465B1B-22FE-4154-8354-1ED57C82BE2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43465B1B-22FE-4154-8354-1ED57C82BE2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43465B1B-22FE-4154-8354-1ED57C82BE2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43465B1B-22FE-4154-8354-1ED57C82BE2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +88,7 @@ Global
 		{F8585EA7-2072-418F-8870-D0F8A4A6F4ED} = {DF29CAC7-4330-442A-8B37-6F3E54CAFC33}
 		{664BF84D-71E7-47CA-A6B1-9B4D3E335A07} = {DF29CAC7-4330-442A-8B37-6F3E54CAFC33}
 		{2432C357-D953-4D5C-AEEA-6554CBAC5664} = {B3554D83-B2A2-4708-8838-73D0B562745E}
+		{43465B1B-22FE-4154-8354-1ED57C82BE2B} = {55B3E4F2-6E23-4DBB-84E3-0630E32FFDBA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B7B7E014-995C-495C-9057-C5AD746DD013}
