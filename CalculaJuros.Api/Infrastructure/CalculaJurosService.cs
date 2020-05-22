@@ -15,7 +15,7 @@ namespace CalculaJuros.Api.Infrastructure
         {
             var juros = await _taxaJurosService.getTaxaJuros();
 
-            juros =+ 1;
+            juros = juros + 1;
 
             var valorFinal = Math.Round((valorInicial * (decimal)Math.Pow(juros, tempo)), 2);
 
